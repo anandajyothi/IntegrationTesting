@@ -1,0 +1,35 @@
+/*Add User*/
+curl --location --request POST 'http://localhost:8085/users' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username":"Sanjeet1189",
+    "devicetype":"Mobile",
+    "subscription":true
+}'
+
+/*Login API*/
+curl --location --request POST 'http://localhost:8085/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username":"Sanjeet1189",
+    "devicetype":"Mobile1"
+}'
+
+/* Update User*/
+curl --location --request PUT 'http://localhost:8085/users/1' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username":"Sanjeet1189",
+    "devicetype":"Mobile",
+    "subscription":false
+}'
+
+/*Delete user*/
+curl --location --request DELETE 'http://localhost:8080/users/1' \
+--data-raw ''
+
+/*User By Id*/
+curl --location --request GET 'http://localhost:8085/users/1'
+
+/*User Listing*/
+curl --location --request GET 'http://localhost:8085/users'
